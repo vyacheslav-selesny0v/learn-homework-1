@@ -26,7 +26,7 @@ def main(first_string, second_string):
     if first_string > second_string:
         return 2
             
-    if first_string != second_string and second_string == 'learn':
+    if second_string == 'learn':
         return 3
         
 if __name__ == "__main__":

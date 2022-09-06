@@ -21,16 +21,16 @@ def main(age_user):
     В ней надо заменить pass на ваш код
     """
     
-    if 0 < int(age_user) < 8:
+    if age_user < 8:
       return 'Вы учитесь в детском саду'
 
-    elif 8 <= int(age_user) < 18:
+    elif 8 <= age_user < 18:
       return 'Вы учитесь в школе'
 
-    elif 18 <= int(age_user) < 22:
+    elif 18 <= age_user < 22:
       return 'Вы учитесь в ВУЗе'
 
-    elif 22 < int(age_user) < 100:
+    elif 22 <= age_user < 100:
       return 'Вы работаете'
     else:
       return 'Вы ввели не корректный возраст'

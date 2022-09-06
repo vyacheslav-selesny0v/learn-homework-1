@@ -21,25 +21,25 @@ data = [
     {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
   ]
 
+def items_sum(items_sold):
+        phone_sum = 0
+        for quant in items_sold:
+            phone_sum += quant    
+        return phone_sum
+
+def items_average(items_sold):
+        phone_sum = 0
+        for quant in items_sold:
+            phone_sum += quant
+        items_avg = phone_sum / len(items_sold)  
+        return items_avg
 
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    def items_sum(items_sold):
-        phone_sum = 0
-        for quant in items_sold:
-          phone_sum += quant    
-        return phone_sum
     
-    def items_average(items_sold):
-        phone_sum = 0
-        for quant in items_sold:
-            phone_sum += quant
-        items_avg = phone_sum / len(items_sold)  
-        return items_avg    
-        
     for phone in data:
         total_phone_sum = items_sum(phone['items_sold'])
         print(f"Суммы проданных телефонов {phone['product']}: {total_phone_sum}")

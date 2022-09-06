@@ -21,12 +21,10 @@ def ask_user(questions_and_answers):
 
     user_say = input('Введите ваш вопрос ')
     
-    while user_say in questions_and_answers.keys():
+    while user_say in questions_and_answers:
         
-        if user_say in questions_and_answers.keys():
+        if user_say in questions_and_answers:
             print(questions_and_answers[user_say])
-            break
-            
         else:
             break
     
