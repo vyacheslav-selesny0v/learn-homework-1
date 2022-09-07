@@ -14,18 +14,12 @@
 def hello_user():
     
     while True:
-      try:
-
-        user_say = input('Как дела? ')
-        
+        try:
+            user_say = input('Как дела? ')
+        except KeyboardInterrupt:
+          print('Пока!')
+          break
         if user_say == 'Хорошо':
-            break
-        else:
-            input('Как дела? ')
-
-      except KeyboardInterrupt:
-        print('Пока!')
-        break
-    
+            break 
 if __name__ == "__main__":
     hello_user()
