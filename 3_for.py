@@ -21,18 +21,13 @@ data = [
     {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
   ]
 
-def items_sum(items_sold):
-        phone_sum = 0
-        for quant in items_sold:
-            phone_sum += quant    
-        return phone_sum
-
-def items_average(items_sold):
-        phone_sum = 0
-        for quant in items_sold:
-            phone_sum += quant
-        items_avg = phone_sum / len(items_sold)  
-        return items_avg
+def calculation_of_phones(number_of_phones):
+    product_sum = 0
+    for product in number_of_phones:
+            
+        product_sum = sum(number_of_phones)
+        
+        return product_sum
 
 def main():
     """
@@ -40,27 +35,16 @@ def main():
     В ней надо заменить pass на ваш код
     """
     
+    all_product_sum = 0
+    
     for phone in data:
-        total_phone_sum = items_sum(phone['items_sold'])
-        print(f"Суммы проданных телефонов {phone['product']}: {total_phone_sum}")
-        
-    for phone in data:
-        phone_items_avg = items_average(phone['items_sold'])
-        print(f"Среднее число проданных телефонов {phone['product']}: {phone_items_avg}")
-
-    total_sum = 0
-
-    for phone in data:
-        total_sum += items_sum(phone['items_sold'])
-    print(f"Общая сумма проданных телефонов: {total_sum}")
-
-    phone_items_avg_sum = 0
-
-    for phone in data:
-        phone_items_avg_sum += items_average(phone['items_sold'])
-
-    phones_avg = phone_items_avg_sum / len(data)
-    print(f"Среднее число проданных телефонов: {phones_avg}")
-
+        phones_sum = calculation_of_phones(phone['items_sold'])
+        print(f"Суммы проданных телефонов {phone['product']}: {phones_sum}")
+        product_avg = calculation_of_phones(phone['items_sold'])/len(phone['items_sold'])
+        print(f"Среднее кол-во проданных телефонов {phone['product']}: {product_avg}")
+        all_product_sum += phones_sum
+        all_product_avg = all_product_sum/len(data)
+    print(f"Общее кол-во проданных телефонов: {all_product_sum}")
+    print(f"Среднее кол-во проданных телефонов: {all_product_avg}")    
 if __name__ == "__main__":
     main()

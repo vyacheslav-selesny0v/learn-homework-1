@@ -24,7 +24,7 @@ def main(age_user):
     if age_user < 8:
       return 'Вы учитесь в детском саду'
 
-    elif 8 <= age_user < 18:
+    elif age_user < 18:
       return 'Вы учитесь в школе'
 
     elif 18 <= age_user < 22:

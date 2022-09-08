@@ -35,7 +35,7 @@ def discounted(price, discount, max_discount=20):
         try:
             return price - (price * discount / 100)
         except TypeError:
-            print('Ошибка типов аргументов')
+            print('Ошибка типов аргументов')  # У меня срабатывает на этом print(discounted("five", 5))
         
 if __name__ == "__main__":
     print(discounted(100, 2))

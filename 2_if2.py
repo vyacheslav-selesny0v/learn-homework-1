@@ -23,7 +23,7 @@ def main(first_string, second_string):
     if first_string == second_string:
         return 1
             
-    if first_string > second_string:
+    if len(first_string) > len(second_string):
         return 2
             
     if second_string == 'learn':

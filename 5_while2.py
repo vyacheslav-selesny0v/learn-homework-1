@@ -19,14 +19,12 @@ questions_and_answers = {'Как дела?': 'Отлично', 'Что дела�
 
 def ask_user(questions_and_answers):
 
-    user_say = input('Введите ваш вопрос ')
-    
-    while user_say in questions_and_answers:
-        
-        if user_say in questions_and_answers:
-            print(questions_and_answers[user_say])
-        else:
-            break
-    
+    while True:
+      user_text = input('Задайте вопрос ')
+
+      if user_text in questions_and_answers:
+        print(questions_and_answers[user_text])
+        break
+
 if __name__ == '__main__':
     ask_user(questions_and_answers)
