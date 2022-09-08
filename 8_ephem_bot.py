@@ -33,13 +33,14 @@ def greet_user(update, context):
     update.message.reply_text(text)
 
 def constellation_planet(update, context):
-    planets = {"Mercury": ephem.Mercury("2022/09/08"), 
-            "Venus": ephem.Venus("2022/09/08"), 
-            "Mars": ephem.Mars("2022/09/08"), 
-            "Jupiter": ephem.Jupiter("2022/09/08"), 
-            "Saturn": ephem.Saturn("2022/09/08"), 
-            "Uranus": ephem.Uranus("2022/09/08"), 
-            "Neptune": ephem.Neptune("2022/09/08")}
+    today = date.today()
+    planets = {"Mercury": ephem.Mercury(today), 
+            "Venus": ephem.Venus(today), 
+            "Mars": ephem.Mars(today), 
+            "Jupiter": ephem.Jupiter(today), 
+            "Saturn": ephem.Saturn(today), 
+            "Uranus": ephem.Uranus(today), 
+            "Neptune": ephem.Neptune(today)}
 
 
     user_text = str(update.message.text.split()[1]).lower().capitalize()  
@@ -47,11 +48,12 @@ def constellation_planet(update, context):
     if user_text in planets:
         print(ephem.constellation(planets[user_text]))
 
-    
-    print("Today's date:", date.today())
+    day = str(date.today()).split('-')
+    day_now = f"Today's date {day[0]}/{day[1]}/{day[2]}"
+    print("Today's date:", day)
     print(user_text)
-    update.message.reply_text("Today's date:", date.today())
-    update.message.reply_text(user_text)
+    update.message.reply_text(day_now)
+    update.message.reply_text(ephem.constellation(planets[user_text]))
     
 
 def talk_to_me(update, context):
