@@ -47,14 +47,12 @@ def constellation_planet(update, context):
  
     if user_text in planets:
         print(ephem.constellation(planets[user_text]))
+        day_now = f"Today's date {today.year}/{today.month}/{today.day}"
+        print("Today's date:", today)
+        print(user_text)
+        update.message.reply_text(day_now)
+        update.message.reply_text(ephem.constellation(planets[user_text]))
 
-    day = str(date.today()).split('-')
-    day_now = f"Today's date {day[0]}/{day[1]}/{day[2]}"
-    print("Today's date:", day)
-    print(user_text)
-    update.message.reply_text(day_now)
-    update.message.reply_text(ephem.constellation(planets[user_text]))
-    
 
 def talk_to_me(update, context):
     user_text = update.message.text
